@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    protected fun GetSunset(view: View){
+    protected fun GetSunTime(view: View){
         var city = etCityName.text.toString()
         val url="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+ city +"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
         MyAsyncTask().execute(url)
@@ -48,8 +48,9 @@ class MainActivity : AppCompatActivity() {
                 val channel=results.getJSONObject("channel")
                 val astronomy=channel.getJSONObject("astronomy")
                 var sunrise=astronomy.getString("sunrise")
-//                var sunset=astronomy.getString("sunset")
-                tvSunSetTime.setText("Sunrise time is "+sunrise)
+                var sunset=astronomy.getString("sunset")
+                tvSunRiseTime.setText(sunrise)
+                tvSunSetTime.setText(sunset)
             }catch (ex:Exception){}
         }
         override fun onPostExecute(result: String?) {

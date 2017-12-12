@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Sunset</string>
+    <string name="app_name">SunTime</string>
+    <string name="city_xy">City, XY</string>
+    <string name="sunrise_time_is">Sunrise time is</string>
+    <string name="get_sunrise_sunset"><![CDATA[Get Sunrise & Sunset]]></string>
+    <string name="and"><![CDATA[&]]></string>
+    <string name="sunset_time_is">Sunset time is</string>
 </resources>
